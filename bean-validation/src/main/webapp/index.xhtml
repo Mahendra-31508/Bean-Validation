@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="title">
+	Validate Data web app
+    </ui:define>
+	<ui:define name="application_name">
+    	Validate Data web app
+    </ui:define>
+	<ui:define name="content">
+	<h2>Bean Validation</h2>
+	<h:form>
+		<p class="input">
+			<h:outputLabel value="Enter your name:" />
+			<h:inputText value="#{hello.name}" />
+		</p>
+		<br class="clear"/>
+		<p class="input">
+			<h:outputLabel value="Enter About You:" />
+			<h:inputText value="#{hello.salary}"  />
+		</p>
+		<br class="clear"/>
+		<p class="input">
+			<h:outputLabel value="Enter Age:" />
+			<h:inputText value="#{hello.age}"  />
+		</p>
+		
+		<br class="clear"/>
+		<p class="input">
+			    <h:commandButton action="#{hello.validate()}" value="submit" styleClass="btn" />
+		</p>
+		<br class="clear"/>
+		<br class="clear"/>
+		<h:outputLabel value="#{hello.res}"  style="color:green"/>
+	</h:form>
+	</ui:define>
+</ui:composition>
